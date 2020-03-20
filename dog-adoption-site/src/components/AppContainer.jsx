@@ -9,7 +9,7 @@ class AppContainer extends Component {
             listOfDogs:[],
          }
     }
-
+    //function to send down to the child so the child component to send back up its current array
     callBackFunction = (pass) =>{
         this.setState(
             {
@@ -21,10 +21,11 @@ class AppContainer extends Component {
     render() { 
         return ( 
             <div className='container'>
-                
+                {/* passing the current parent array so it can be iterated through in the child */}
                 <div className='display'>
                     <AvailableDogs listOfDogs={this.state.listOfDogs}/>
                 </div>
+                {/* passing the function into the child so its in scope and can be pulled down using props */}
                 <div className='form'>
                     <AddAdoptionForm callBackFunction={this.callBackFunction}/>
                 </div>

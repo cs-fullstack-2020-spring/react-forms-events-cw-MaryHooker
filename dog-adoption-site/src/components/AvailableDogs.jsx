@@ -10,16 +10,17 @@ class AvailableDogs extends Component {
     render() { 
         return ( 
             <div>
+                {/* use map function to iterate thorugh the passed down array return a new one/ used a ternary inside of this funciton to toggle between yes and no for if the dog is trained */}
                 <h1>Available Dogs</h1>
                 {
                     this.props.listOfDogs.map((dog,index) =>{
                         return(
                             <div key={index}>
-                                <p>{dog.name}</p>
-                                <p>{dog.age}</p>
-                                <p>{dog.breed}</p>
-                                <p>{dog.trained}</p>
-                                <p>{dog.color}</p>
+                                <p>Name: {dog.name}</p>
+                                <p>Age: {dog.age}</p>
+                                <p>Breed: {dog.breed}</p>
+                                <p>Trained: {dog.trained ? 'yes':'no'}</p>
+                                <p>Color: {dog.color}</p>
                             </div>
                         )
                     }
